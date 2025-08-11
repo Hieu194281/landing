@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, sans-serif;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  line-height: 1.5;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)) center center / cover no-repeat, url(./static/images/fondo-desktop.webp); */
+    background-position: center center;
+    padding: 20px;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: rgb(255, 215, 0);
+    text-shadow: rgba(255, 215, 0, 0.5) 0px 0px 20px;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-image: initial;
+}
+
+.hero-header {
+    order: 1;
+    /* transform: translateX(-100%); */
+    animation: 1.5s ease-out 0s 1 normal forwards running slideInFromLeft;
+}
+slideInFromLeft animation {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(10px);
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-image: initial;
+}
+
+.hero-whatsapp {
+    order: 2;
+    position: relative;
+    top: -40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: 1.5s ease-out 0.5s 1 normal both running fadeInUp;
+}
+
+.hero-features {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(30px);
+    gap: 50px;
+    animation: 1.5s ease-out 1s 1 normal both running fadeInUp;
+}
